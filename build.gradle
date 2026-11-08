@@ -50,7 +50,7 @@ tasks.register('reports') {
 }
 
 gitPublish {
-    repoUri = 'git@github.com:ODU-CS350-F26/CS350--ciAsst--Keiyon.git'
+    repoUri = System.getenv('GRGIT_USER') ?  'https://github.com/ODU-CS350-F26/CS350--ciAsst--Keiyon.git' : 'git@github.com:ODU-CS350-F26/CS350--ciAsst--Keiyon.git'
     branch = 'gh-pages'
     contents {
         from('build/reports')
