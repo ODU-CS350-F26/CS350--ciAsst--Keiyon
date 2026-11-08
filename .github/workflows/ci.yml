@@ -23,5 +23,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build and test
       env:
-        GRGIT_USER: ${{ secrets.GITHUB_TOKEN }}
+        GRGIT_USER: ${{ github.actor }}
+        GRGIT_PASS: ${{ secrets.GITHUB_TOKEN }}
       run: ./gradlew deployReports
